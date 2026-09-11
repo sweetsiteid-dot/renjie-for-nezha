@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password =
             document.getElementById("passwordInput").value.trim();
 
-        if(password === "2308"){
+        if(password.toLowerCase() === "nezha"){
 
             const passwordScreen =
                 document.getElementById("passwordScreen");
@@ -29,15 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 websiteContent.style.display = "block";
 
                 window.scrollTo({
-                    top:0,
-                    behavior:"instant"
+                    top: 0,
+                    behavior: "instant"
                 });
 
-            },800);
+            }, 800);
 
         }else{
 
-            alert("Wrong Password 💙");
+            alert("Wrong PIN 💙");
 
             const input =
                 document.getElementById("passwordInput");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(passwordInput){
 
-        passwordInput.addEventListener("keydown",(event)=>{
+        passwordInput.addEventListener("keydown", (event) => {
 
             if(event.key === "Enter"){
 
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       OPEN GIFT
+       OPEN MENSIVE
     ========================= */
 
     window.openGift = function(){
@@ -90,9 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
             music.volume = 0.6;
 
             music.play().catch(() => {
+
                 console.log(
                     "Music requires user interaction."
                 );
+
             });
 
         }
@@ -100,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(giftSection){
 
             giftSection.scrollIntoView({
-                behavior:"smooth"
+                behavior: "smooth"
             });
 
         }
@@ -109,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       FLOATING HEARTS
+       FLOATING BLUE HEARTS
     ========================= */
 
     function createHeart(){
@@ -122,7 +124,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const heart =
             document.createElement("div");
 
-        heart.innerHTML = "💙";
+        const symbols = [
+            "💙",
+            "🤍",
+            "✨",
+            "♡"
+        ];
+
+        heart.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
 
         heart.style.position = "absolute";
 
@@ -153,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    setInterval(createHeart,450);
+    setInterval(createHeart, 450);
 
 
     /* =========================
@@ -195,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
         .fade-in{
 
             opacity:0;
@@ -207,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 transform 1s ease;
 
         }
+
 
         .fade-in.show{
 
@@ -244,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             },
             {
-                threshold:0.15
+                threshold: 0.15
             }
         );
 
@@ -311,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
        PARALLAX HERO
     ========================= */
 
-    window.addEventListener("scroll",() => {
+    window.addEventListener("scroll", () => {
 
         const hero =
             document.querySelector(".hero");
@@ -328,30 +344,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       BIRTHDAY QUOTES
+       MENSIVE QUOTES
     ========================= */
 
     const quotes = [
 
-        "Twenty-one looks beautiful on you, Ronan. 💙",
+        "Finally, it's our first mensive. 💙",
 
-        "May every dream find its way to you. ✨",
+        "One month with you, and I'm still so happy. 🤍",
 
-        "You make my world a little brighter. 🤍",
+        "You are my home, my world, my universe. 💙",
 
-        "I hope today gives you a thousand reasons to smile. 💙",
+        "Kamu keren, aku keren, kita berdua keren huhuhu. 🫰🏻",
 
-        "The best chapters of your story are still ahead. 📖",
+        "Thank you for staying and being patient with me. 🤍",
 
-        "You are loved more than you know. 🤍",
+        "I'm so grateful that I got to know you. ✨",
 
-        "I'm really lucky to have you. 💙",
+        "One month down, and many more chapters to come. 💙",
 
-        "May this year bring you everything you've been hoping for. ✨",
+        "I feel safe being myself with you. ❤️‍🩹",
 
-        "Keep chasing your dreams, Ronan. 🌙",
+        "I love you more than yesterday. 🤍",
 
-        "Happy Birthday, Ronan Pierce. 🤍"
+        "Tomorrow, I'll love you even more. 💙"
 
     ];
 
@@ -392,9 +408,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             quoteElement.style.opacity = "1";
 
-        },500);
+        }, 500);
 
-    },5000);
+    }, 5000);
 
 
     /* =========================
@@ -490,6 +506,5 @@ document.addEventListener("DOMContentLoaded", () => {
         music.volume = 0.6;
 
     }
-
 
 });
